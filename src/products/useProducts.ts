@@ -1,3 +1,4 @@
+import { getProducts } from "../apiClient";
 import type { Product } from "./types";
 import { useQuery } from "@tanstack/react-query";
 
@@ -10,10 +11,7 @@ import { useQuery } from "@tanstack/react-query";
 export const useProducts = () => {
   const { data: products, isLoading } = useQuery<Product[]>({
     queryKey: ["products"],
-    queryFn: () =>
-      fetch("http://localhost:3001/products", {
-        signal: AbortSignal.timeout(3000),
-      }).then((res) => res.json()),
+    queryFn: getProducts,
   });
 
   return { products, isLoading };
