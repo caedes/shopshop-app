@@ -1,15 +1,19 @@
+import { Link } from "react-router";
 import { Price } from "../ds/atoms/Price";
 
 type ProductCardProps = {
+  id: number;
   title: string;
   price: number;
 };
 
-export const ProductCard = ({ title, price }: ProductCardProps) => {
+export const ProductCard = ({ id, title, price }: ProductCardProps) => {
   return (
-    <div>
-      <h4>{title}</h4>
+    <>
+      <h4>
+        <Link to={`/products/${id}`}>{title}</Link>
+      </h4>
       <Price amount={price} />
-    </div>
+    </>
   );
 };

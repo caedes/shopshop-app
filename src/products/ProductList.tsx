@@ -10,7 +10,7 @@ export const ProductList = () => {
     <ol>
       {products?.map(({ id, name, price }) => (
         <li key={id}>
-          <ProductCard title={name} price={price} />
+          <ProductCard title={name} price={price} id={id} />
         </li>
       ))}
     </ol>

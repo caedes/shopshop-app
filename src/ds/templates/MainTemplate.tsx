@@ -8,7 +8,9 @@ export const MainTemplate = () => {
       <nav>
         <Link to="/">Home</Link> | <Link to="/products">Products</Link>
       </nav>
-      <Outlet />
+      <main>
+        <Outlet />
+      </main>
     </div>
   );
 };
