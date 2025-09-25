@@ -6,13 +6,15 @@ export const ProductList = () => {
 
   if (isLoading) return <p>Loading...</p>;
 
-  return (
+  return products ? (
     <ol>
-      {products.map(({ id, name, price }) => (
+      {products?.map(({ id, name, price }) => (
         <li key={id}>
           <ProductCard title={name} price={price} />
         </li>
       ))}
     </ol>
+  ) : (
+    <p>No products found</p>
   );
 };
