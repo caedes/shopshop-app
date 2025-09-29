@@ -1,16 +1,22 @@
-import { useState } from "react";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import z from "zod";
+
+const ProductFormSchema = z.object({
+  name: z.string().min(3, "Product name is required"),
+  price: z.number().gt(0, "Price must be a positive number"),
+});
+
+type ProductForm = z.infer<typeof ProductFormSchema>;
 
 export const useProductCreationForm = () => {
-  const [formData, setFormData] = useState({ name: "", price: 0 });
+  const form = useForm<ProductForm>({
+    resolver: zodResolver(ProductFormSchema),
+  });
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = event.target;
-    setFormData({ ...formData, [name]: value });
-  };
-  const handleSubmit = async (event: React.FormEvent) => {
-    event.preventDefault();
-    console.log("Submitting form data:", formData);
+  const createProduct = (productForm: ProductForm) => {
+    console.log("Creating product:", productForm);
   };
 
-  return { formData, handleChange, handleSubmit };
+  return { form, createProduct };
 };
