@@ -1,3 +1,5 @@
+import { Typography } from "@mui/material";
+
 export const HomePage = () => {
-  return <p>Please select a product and buy it.</p>;
+  return <Typography>Please select a product and buy it.</Typography>;
 };

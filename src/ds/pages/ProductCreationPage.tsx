@@ -1,3 +1,4 @@
+import { Button, Typography } from "@mui/material";
 import { useProductCreationForm } from "../../products/useProductCreationForm";
 
 export const ProductCreationPage = () => {
@@ -10,7 +11,7 @@ export const ProductCreationPage = () => {
 
   return (
     <>
-      <h4>Product Creation Form</h4>
+      <Typography variant="h4">Product Creation Form</Typography>
       <form>
         <div>
           <input {...register("name")} placeholder="Product Name" />
@@ -25,9 +26,13 @@ export const ProductCreationPage = () => {
             <span className="error">{errors.price.message}</span>
           )}
         </div>
-        <button type="submit" onClick={handleSubmit(createProduct)}>
+        <Button
+          variant="contained"
+          type="submit"
+          onClick={handleSubmit(createProduct)}
+        >
           Create Product
-        </button>
+        </Button>
       </form>
     </>
   );

@@ -1,3 +1,5 @@
+import { Typography } from "@mui/material";
+
 type ShoppingCartItemProps = {
   productName: string;
   quantity: number;
@@ -9,8 +11,8 @@ export const ShoppingCartItem = ({
 }: ShoppingCartItemProps) => {
   return (
     <>
-      <h5>{productName}</h5>
-      <p>Quantity: {quantity}</p>
+      <Typography variant="h5">{productName}</Typography>
+      <Typography>Quantity: {quantity}</Typography>
     </>
   );
 };

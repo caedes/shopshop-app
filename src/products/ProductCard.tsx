@@ -1,5 +1,6 @@
 import { Link } from "react-router";
 import { Price } from "../ds/atoms/Price";
+import { Typography } from "@mui/material";
 
 type ProductCardProps = {
   id: number;
@@ -10,9 +11,9 @@ type ProductCardProps = {
 export const ProductCard = ({ id, title, price }: ProductCardProps) => {
   return (
     <>
-      <h4>
+      <Typography variant="h4">
         <Link to={`/products/${id}`}>{title}</Link>
-      </h4>
+      </Typography>
       <Price amount={price} />
     </>
   );

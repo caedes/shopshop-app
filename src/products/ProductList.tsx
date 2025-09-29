@@ -1,3 +1,4 @@
+import { Typography } from "@mui/material";
 import { ProductCard } from "./ProductCard";
 import { useProducts } from "./useProducts";
 
@@ -15,6 +16,6 @@ export const ProductList = () => {
       ))}
     </ol>
   ) : (
-    <p>No products found</p>
+    <Typography>No products found</Typography>
   );
 };

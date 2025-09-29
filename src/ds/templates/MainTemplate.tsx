@@ -1,11 +1,12 @@
 import { Link, Outlet } from "react-router";
 import { ColorModeToggle } from "../atoms/ColorModeToggle";
+import { Typography } from "@mui/material";
 
 export const MainTemplate = () => {
   return (
     <>
-      <h1>Welcome to ShopShop!</h1>
-      <p>Your one-stop shop for all your shopping needs.</p>
+      <Typography variant="h1">Welcome to ShopShop!</Typography>
+      <Typography>Your one-stop shop for all your shopping needs.</Typography>
       <header>
         <nav>
           <Link to="/">Home</Link> | <Link to="/products">Products</Link> |{" "}

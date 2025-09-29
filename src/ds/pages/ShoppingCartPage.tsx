@@ -1,3 +1,4 @@
+import { Button, Typography } from "@mui/material";
 import { useShoppingCart } from "../../shopping-cart/useShoppingCart";
 import { Price } from "../atoms/Price";
 import { ShoppingCartItem } from "../molecules/ShoppingCartItem";
@@ -14,9 +15,9 @@ export const ShoppingCartPage = () => {
 
   return (
     <>
-      <h4>Your Shopping Cart</h4>
+      <Typography variant="h4">Your Shopping Cart</Typography>
       {shoppingCartItems.length === 0 ? (
-        <p>Your cart is empty.</p>
+        <Typography>Your cart is empty.</Typography>
       ) : (
         <ul>
           {shoppingCartItems.map(({ id, productName, quantity }) => (
@@ -31,7 +32,9 @@ export const ShoppingCartPage = () => {
         Total : <Price amount={total} />
       </p>
 
-      <button onClick={handlePurchase}>Purchase</button>
+      <Button variant="contained" onClick={handlePurchase}>
+        Purchase
+      </Button>
     </>
   );
 };

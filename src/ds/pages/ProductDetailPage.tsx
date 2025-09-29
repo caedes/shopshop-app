@@ -3,6 +3,7 @@ import { Price } from "../atoms/Price";
 import { useProduct } from "../../products/useProduct";
 import { useShoppingCart } from "../../shopping-cart/useShoppingCart";
 import type { ShoppingCartItem } from "../../shopping-cart/types";
+import { Button, Typography } from "@mui/material";
 
 export const ProductDetailPage = () => {
   const { productId } = useParams<{ productId: string }>();
@@ -11,7 +12,7 @@ export const ProductDetailPage = () => {
 
   if (isLoading) return <p>Loading...</p>;
 
-  if (!product) return <p>Product not found</p>;
+  if (!product) return <Typography>Product not found</Typography>;
 
   const { name, price } = product;
 
@@ -24,12 +25,12 @@ export const ProductDetailPage = () => {
 
   return (
     <article>
-      <h4>{name}</h4>
+      <Typography variant="h4">{name}</Typography>
       <Price amount={price} />
       <div>
-        <button onClick={() => addToCart(shoppingCartItem)}>
+        <Button variant="contained" onClick={() => addToCart(shoppingCartItem)}>
           Add to ShopShoppingCart
-        </button>
+        </Button>
       </div>
     </article>
   );
