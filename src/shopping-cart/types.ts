@@ -9,4 +9,5 @@ export type ShoppingCartState = {
   shoppingCartItems: ShoppingCartItem[];
   total: number;
   addToCart: (shoppingCartItem: ShoppingCartItem) => void;
+  purchase: () => void;
 };

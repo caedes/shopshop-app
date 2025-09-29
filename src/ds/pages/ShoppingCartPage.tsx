@@ -5,6 +5,12 @@ import { ShoppingCartItem } from "../molecules/ShoppingCartItem";
 export const ShoppingCartPage = () => {
   const shoppingCartItems = useShoppingCart((state) => state.shoppingCartItems);
   const total = useShoppingCart((state) => state.total);
+  const purchase = useShoppingCart((state) => state.purchase);
+
+  const handlePurchase = () => {
+    purchase();
+    console.log("Purchased!");
+  };
 
   return (
     <>
@@ -25,7 +31,7 @@ export const ShoppingCartPage = () => {
         Total : <Price amount={total} />
       </p>
 
-      <button onClick={() => console.log("Purchased!")}>Purchase</button>
+      <button onClick={handlePurchase}>Purchase</button>
     </>
   );
 };

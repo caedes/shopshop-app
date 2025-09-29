@@ -1,9 +1,12 @@
 import { create } from "zustand";
 import type { ShoppingCartItem, ShoppingCartState } from "./types";
 
+const initialShoppingCartItems: ShoppingCartItem[] = [];
+const initialTotal = 0;
+
 export const useShoppingCart = create<ShoppingCartState>((set) => ({
-  shoppingCartItems: [],
-  total: 0,
+  shoppingCartItems: initialShoppingCartItems,
+  total: initialTotal,
   addToCart: (shoppingCartItem: ShoppingCartItem) =>
     set((state) => {
       const existingItemIndex = state.shoppingCartItems.findIndex(
@@ -27,4 +30,9 @@ export const useShoppingCart = create<ShoppingCartState>((set) => ({
         total: state.total + shoppingCartItem.price * shoppingCartItem.quantity,
       };
     }),
+  purchase: () =>
+    set(() => ({
+      shoppingCartItems: initialShoppingCartItems,
+      total: initialTotal,
+    })),
 }));
