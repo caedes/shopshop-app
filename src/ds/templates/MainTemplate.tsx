@@ -8,7 +8,8 @@ export const MainTemplate = () => {
       <p>Your one-stop shop for all your shopping needs.</p>
       <header>
         <nav>
-          <Link to="/">Home</Link> | <Link to="/products">Products</Link>
+          <Link to="/">Home</Link> | <Link to="/products">Products</Link> |{" "}
+          <Link to="/shopping-cart">ShopShopping Cart</Link>
         </nav>
         <ColorModeToggle />
       </header>
