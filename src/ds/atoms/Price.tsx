@@ -5,5 +5,5 @@ type PriceProps = {
 };
 
 export const Price = ({ amount }: PriceProps) => {
-  return <Typography>{amount}</Typography>;
+  return <Typography component="span">{amount}</Typography>;
 };
