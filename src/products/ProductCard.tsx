@@ -10,7 +10,7 @@ import {
 } from "@mui/material";
 
 type ProductCardProps = {
-  id: number;
+  id: string;
   title: string;
   price: number;
 };
@@ -22,8 +22,8 @@ type ProductCardProps = {
  *
  * It should be avoid in production code, but it's fine for this demo app.
  */
-const getImageId = (id: number) => {
-  return id + 20;
+const getImageId = (id: string) => {
+  return Number(id) + 20;
 };
 
 export const ProductCard = ({ id, title, price }: ProductCardProps) => {

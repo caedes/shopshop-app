@@ -9,7 +9,7 @@ export const ProductList = () => {
 
   return products ? (
     <ol>
-      {products?.map(({ id, name, price }) => (
+      {products.map(({ id, name, price }) => (
         <li key={id}>
           <ProductCard title={name} price={price} id={id} />
         </li>
