@@ -5,6 +5,7 @@ import { MainTemplate } from "../ds/templates/MainTemplate";
 import { ProductDetailPage } from "../ds/pages/ProductDetailPage";
 import { ProductCreationPage } from "../ds/pages/ProductCreationPage";
 import { ShoppingCartPage } from "../ds/pages/ShoppingCartPage";
+import { CheckoutPage } from "../ds/pages/CheckoutPage";
 
 export const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ export const router = createBrowserRouter([
       {
         path: "shopping-cart",
         element: <ShoppingCartPage />,
+      },
+      {
+        path: "checkout",
+        element: <CheckoutPage />,
       },
     ],
   },
