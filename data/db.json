@@ -1,7 +1,214 @@
 {
   "products": [
-    { "id": "1", "name": "Product 1", "price": 10 },
-    { "id": "2", "name": "Product 2", "price": 20 },
-    { "id": "3", "name": "Product 3", "price": 30 }
+    {
+      "id": 4,
+      "name": "Smartphone Samsung",
+      "categories": ["Électronique", "Smartphone", "Samsung"],
+      "description": "Smartphone dernière génération avec écran AMOLED",
+      "price": 899.99
+    },
+    {
+      "id": 5,
+      "name": "Casque Audio",
+      "categories": ["Audio", "Casque", "Sans-fil"],
+      "description": "Casque sans fil avec réduction de bruit active",
+      "price": 249.99
+    },
+    {
+      "id": 6,
+      "name": "Ordinateur Portable",
+      "categories": ["Informatique", "Ordinateur", "Portable"],
+      "description": "PC portable léger avec processeur Intel i7",
+      "price": 1299.99
+    },
+    {
+      "id": 7,
+      "name": "Montre Connectée",
+      "categories": ["Électronique", "Montre", "Connectée"],
+      "description": "Montre intelligente avec GPS et capteur cardiaque",
+      "price": 349.99
+    },
+    {
+      "id": 8,
+      "name": "Tablette",
+      "categories": ["Électronique", "Tablette", "Mobile"],
+      "description": "Tablette haute résolution pour le travail et loisirs",
+      "price": 599.99
+    },
+    {
+      "id": 9,
+      "name": "Clavier Mécanique",
+      "categories": ["Gaming", "Clavier", "RGB"],
+      "description": "Clavier gaming avec éclairage RGB personnalisable",
+      "price": 159.99
+    },
+    {
+      "id": 10,
+      "name": "Souris Gaming",
+      "categories": ["Gaming", "Souris", "Précision"],
+      "description": "Souris haute précision pour joueurs exigeants",
+      "price": 79.99
+    },
+    {
+      "id": 11,
+      "name": "Écran 4K",
+      "categories": ["Informatique", "Écran", "4K"],
+      "description": "Écran 27 pouces 4K pour professionnels",
+      "price": 449.99
+    },
+    {
+      "id": 12,
+      "name": "Enceinte Bluetooth",
+      "categories": ["Audio", "Enceinte", "Bluetooth"],
+      "description": "Enceinte portable étanche avec son 360°",
+      "price": 89.99
+    },
+    {
+      "id": 13,
+      "name": "Caméra Action",
+      "categories": ["Photo", "Caméra", "Sport"],
+      "description": "Caméra d'action étanche pour sports extrêmes",
+      "price": 299.99
+    },
+    {
+      "id": 14,
+      "name": "Disque SSD",
+      "categories": ["Stockage", "SSD", "Externe"],
+      "description": "SSD externe haute vitesse pour stockage rapide",
+      "price": 199.99
+    },
+    {
+      "id": 15,
+      "name": "Chargeur Sans Fil",
+      "categories": ["Accessoire", "Chargeur", "Sans-fil"],
+      "description": "Station de charge sans fil pour smartphones",
+      "price": 39.99
+    },
+    {
+      "id": 16,
+      "name": "Webcam HD",
+      "categories": ["Vidéo", "Webcam", "Streaming"],
+      "description": "Webcam 1080p pour streaming et visioconférence",
+      "price": 129.99
+    },
+    {
+      "id": 17,
+      "name": "Powerbank",
+      "categories": ["Accessoire", "Batterie", "Portable"],
+      "description": "Batterie externe 20000mAh charge rapide",
+      "price": 49.99
+    },
+    {
+      "id": 18,
+      "name": "Router WiFi 6",
+      "categories": ["Réseau", "WiFi", "Routeur"],
+      "description": "Routeur WiFi 6 haute performance",
+      "price": 189.99
+    },
+    {
+      "id": 19,
+      "name": "Imprimante 3D",
+      "categories": ["Impression", "3D", "DIY"],
+      "description": "Imprimante 3D de précision pour hobbyistes",
+      "price": 799.99
+    },
+    {
+      "id": 20,
+      "name": "Drone",
+      "categories": ["Drone", "Caméra", "Volant"],
+      "description": "Drone avec caméra 4K et stabilisation gimbal",
+      "price": 549.99
+    },
+    {
+      "id": 21,
+      "name": "Console de Jeu",
+      "categories": ["Gaming", "Console", "Jeux"],
+      "description": "Console nouvelle génération 4K et VR",
+      "price": 499.99
+    },
+    {
+      "id": 22,
+      "name": "Manette Gaming",
+      "categories": ["Gaming", "Manette", "Sans-fil"],
+      "description": "Manette sans fil avec vibrations haptiques",
+      "price": 69.99
+    },
+    {
+      "id": 23,
+      "name": "Micro USB",
+      "categories": ["Audio", "Microphone", "USB"],
+      "description": "Microphone USB professionnel pour podcast",
+      "price": 179.99
+    },
+    {
+      "id": 24,
+      "name": "Hub USB-C",
+      "categories": ["Accessoire", "Hub", "USB-C"],
+      "description": "Hub 7-en-1 avec HDMI et charge rapide",
+      "price": 59.99
+    },
+    {
+      "id": 25,
+      "name": "Lampe LED",
+      "categories": ["Éclairage", "LED", "Bureau"],
+      "description": "Lampe de bureau LED avec température ajustable",
+      "price": 79.99
+    },
+    {
+      "id": 26,
+      "name": "Support Laptop",
+      "categories": ["Accessoire", "Support", "Ergonomie"],
+      "description": "Support ergonomique ajustable pour portable",
+      "price": 89.99
+    },
+    {
+      "id": 27,
+      "name": "Câble HDMI",
+      "categories": ["Câble", "HDMI", "Vidéo"],
+      "description": "Câble HDMI 2.1 compatible 8K et eARC",
+      "price": 29.99
+    },
+    {
+      "id": 28,
+      "name": "Adaptateur Ethernet",
+      "categories": ["Réseau", "Adaptateur", "Ethernet"],
+      "description": "Adaptateur USB-C vers Ethernet Gigabit",
+      "price": 24.99
+    },
+    {
+      "id": 29,
+      "name": "Refroidisseur PC",
+      "categories": ["PC", "Refroidissement", "RGB"],
+      "description": "Ventilateur CPU avec éclairage RGB",
+      "price": 119.99
+    },
+    {
+      "id": 30,
+      "name": "Filament 3D",
+      "categories": ["Impression", "Filament", "PLA"],
+      "description": "Bobine filament PLA 1.75mm multicolore",
+      "price": 34.99
+    },
+    {
+      "id": 31,
+      "name": "Carte Graphique",
+      "categories": ["PC", "Graphique", "Gaming"],
+      "description": "Carte graphique haute performance pour gaming",
+      "price": 1599.99
+    },
+    {
+      "id": 32,
+      "name": "Mémoire RAM",
+      "categories": ["PC", "Mémoire", "DDR5"],
+      "description": "Kit mémoire DDR5 32GB haute fréquence",
+      "price": 299.99
+    },
+    {
+      "id": 33,
+      "name": "Carte Mère",
+      "categories": ["PC", "Carte Mère", "Gaming"],
+      "description": "Carte mère gaming avec WiFi 6 intégré",
+      "price": 349.99
+    }
   ]
 }

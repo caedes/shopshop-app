@@ -9,9 +9,15 @@ export const ProductList = () => {
 
   return products ? (
     <ol>
-      {products.map(({ id, name, price }) => (
+      {products.map(({ id, name, price, description, categories }) => (
         <li key={id}>
-          <ProductCard title={name} price={price} id={id} />
+          <ProductCard
+            title={name}
+            price={price}
+            id={id}
+            description={description}
+            categories={categories}
+          />
         </li>
       ))}
     </ol>
