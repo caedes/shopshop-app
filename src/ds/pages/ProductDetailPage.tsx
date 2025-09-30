@@ -2,8 +2,8 @@ import { useParams } from "react-router";
 import { Price } from "../atoms/Price";
 import { useProduct } from "../../products/useProduct";
 import { useShoppingCart } from "../../shopping-cart/useShoppingCart";
-import type { ShoppingCartItem } from "../../shopping-cart/types";
 import { Button, Typography } from "@mui/material";
+import { createShoppingCartItem } from "../../products/createShoppingCartItem";
 
 export const ProductDetailPage = () => {
   const { productId } = useParams<{ productId: string }>();
@@ -16,12 +16,11 @@ export const ProductDetailPage = () => {
 
   const { name, price } = product;
 
-  const shoppingCartItem: ShoppingCartItem = {
+  const shoppingCartItem = createShoppingCartItem({
     id: productId!,
     productName: name,
     price,
-    quantity: 1,
-  };
+  });
 
   return (
     <article>

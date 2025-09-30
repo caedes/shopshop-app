@@ -8,6 +8,8 @@ import {
   CardMedia,
   Typography,
 } from "@mui/material";
+import { useShoppingCart } from "../shopping-cart/useShoppingCart";
+import { createShoppingCartItem } from "./createShoppingCartItem";
 
 type ProductCardProps = {
   id: string;
@@ -34,6 +36,14 @@ export const ProductCard = ({
   price,
   description,
 }: ProductCardProps) => {
+  const addToCart = useShoppingCart((state) => state.addToCart);
+
+  const shoppingCartItem = createShoppingCartItem({
+    id,
+    productName: title,
+    price,
+  });
+
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardMedia
@@ -51,7 +61,9 @@ export const ProductCard = ({
         <Price amount={price} />
       </CardContent>
       <CardActions>
-        <Button size="small">Learn More</Button>
+        <Button variant="contained" onClick={() => addToCart(shoppingCartItem)}>
+          Add to ShopShoppingCart
+        </Button>
       </CardActions>
     </Card>
   );
