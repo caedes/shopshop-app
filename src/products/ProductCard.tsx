@@ -42,13 +42,13 @@ export const ProductCard = ({
         title={title}
       />
       <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
+        <Typography gutterBottom variant="h5" component="h4">
           <Link to={`/products/${id}`}>{title}</Link>
         </Typography>
         <Typography variant="body2" sx={{ color: "text.secondary" }}>
           {description}
-          <Price amount={price} />
         </Typography>
+        <Price amount={price} />
       </CardContent>
       <CardActions>
         <Button size="small">Learn More</Button>
