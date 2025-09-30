@@ -1,38 +1,31 @@
-import { Button, Typography } from "@mui/material";
+import { Button, Stack, Typography } from "@mui/material";
 import { useProductCreationForm } from "../../products/useProductCreationForm";
+import { ControlledTextField } from "../molecules/ControlledTextField";
 
 export const ProductCreationPage = () => {
   const { form, createProduct } = useProductCreationForm();
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = form;
+  const { handleSubmit, control } = form;
 
   return (
     <>
       <Typography variant="h4">Product Creation Form</Typography>
-      <form>
-        <div>
-          <input {...register("name")} placeholder="Product Name" />
-          {errors.name && <span className="error">{errors.name.message}</span>}
-        </div>
-        <div>
-          <input
-            {...register("price", { valueAsNumber: true })}
-            placeholder="Product Price"
+      <form onSubmit={handleSubmit(createProduct)}>
+        <Stack sx={{ width: 300 }}>
+          <ControlledTextField
+            name="name"
+            control={control}
+            label="Product Name"
           />
-          {errors.price && (
-            <span className="error">{errors.price.message}</span>
-          )}
-        </div>
-        <Button
-          variant="contained"
-          type="submit"
-          onClick={handleSubmit(createProduct)}
-        >
-          Create Product
-        </Button>
+          <ControlledTextField
+            name="price"
+            control={control}
+            label="Product Price"
+            type="number"
+          />
+          <Button variant="contained" type="submit" sx={{ mt: 2 }}>
+            Create Product
+          </Button>
+        </Stack>
       </form>
     </>
   );
