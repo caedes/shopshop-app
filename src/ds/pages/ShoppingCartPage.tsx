@@ -2,6 +2,7 @@ import { Button, Typography } from "@mui/material";
 import { useShoppingCart } from "../../shopping-cart/useShoppingCart";
 import { Price } from "../atoms/Price";
 import { ShoppingCartItem } from "../molecules/ShoppingCartItem";
+import { BasicGrid } from "../molecules/BasicGrid";
 
 export const ShoppingCartPage = () => {
   const shoppingCartItems = useShoppingCart((state) => state.shoppingCartItems);
@@ -19,13 +20,10 @@ export const ShoppingCartPage = () => {
       {shoppingCartItems.length === 0 ? (
         <Typography>Your cart is empty.</Typography>
       ) : (
-        <ul>
-          {shoppingCartItems.map(({ id, productName, quantity }) => (
-            <li key={id}>
-              <ShoppingCartItem productName={productName} quantity={quantity} />
-            </li>
-          ))}
-        </ul>
+        <BasicGrid
+          gridItems={shoppingCartItems}
+          render={(item) => <ShoppingCartItem {...item} />}
+        />
       )}
 
       <p>
