@@ -23,6 +23,7 @@ export const ControlledTextField = <T extends FieldValues>({
         <TextField
           {...textFieldProps}
           {...field}
+          value={field.value ?? ""}
           onChange={({ target }) =>
             onChange(type === "number" ? Number(target.value) : target.value)
           }
