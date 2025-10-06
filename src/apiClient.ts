@@ -12,10 +12,14 @@ const createDefaultOptions = () => {
 
 const responseToJson = (response: Response) => response.json();
 
-export const getProducts = () =>
-  fetch(getFullUrl("/products"), { ...createDefaultOptions() }).then(
-    responseToJson
-  );
+export const getProducts = (search: string) => () => {
+  const path =
+    search && search.length > 0 ? `/products?name_like=${search}` : "/products";
+
+  return fetch(getFullUrl(path), {
+    ...createDefaultOptions(),
+  }).then(responseToJson);
+};
 
 export const getProduct = (productId?: string) => () =>
   fetch(getFullUrl(`/products/${productId}`), {

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { getProducts } from "../apiClient";
 import type { Product } from "./types";
 import { useQuery } from "@tanstack/react-query";
@@ -9,10 +10,15 @@ import { useQuery } from "@tanstack/react-query";
  * const { products, isLoading } = useProducts();
  */
 export const useProducts = () => {
+  const [search, updateSearch] = useState("");
+
   const { data: products, isLoading } = useQuery<Product[]>({
-    queryKey: ["products"],
-    queryFn: getProducts,
+    queryKey: ["products", { search }],
+    queryFn: getProducts(search),
   });
 
-  return { products, isLoading };
+  const setSearch = ({ target }: React.ChangeEvent<HTMLInputElement>) =>
+    updateSearch(target.value);
+
+  return { products, isLoading, search, setSearch };
 };
