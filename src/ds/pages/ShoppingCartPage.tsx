@@ -3,15 +3,15 @@ import { useShoppingCart } from "../../shopping-cart/useShoppingCart";
 import { Price } from "../atoms/Price";
 import { ShoppingCartItem } from "../molecules/ShoppingCartItem";
 import { BasicGrid } from "../molecules/BasicGrid";
+import { useNavigate } from "react-router";
 
 export const ShoppingCartPage = () => {
   const shoppingCartItems = useShoppingCart((state) => state.shoppingCartItems);
   const total = useShoppingCart((state) => state.total);
-  const purchase = useShoppingCart((state) => state.purchase);
+  const navigate = useNavigate();
 
   const handlePurchase = () => {
-    purchase();
-    console.log("Purchased!");
+    navigate("/checkout");
   };
 
   return (
