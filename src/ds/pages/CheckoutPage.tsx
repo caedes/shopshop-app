@@ -1,17 +1,28 @@
-import {
-  Button,
-  Stack,
-  Step,
-  StepLabel,
-  Stepper,
-  TextField,
-} from "@mui/material";
+import { Button, Stack, Step, StepLabel, Stepper } from "@mui/material";
 import { useStepperNavigation } from "../../hooks/useStepperNavigation";
+import { useShoppingCartPersonalInfosForm } from "../../shopping-cart/useShoppingCartPersonalInfosForm";
+import { ControlledTextField } from "../molecules/ControlledTextField";
+import { useShoppingCartShippingDetailsForm } from "../../shopping-cart/useShoppingCartShippingDetailsForm";
+import { useShoppingCartPaymentDetailsForm } from "../../shopping-cart/useShoppingCartPaymentDetailsForm";
 
 export const CheckoutPage = () => {
   const { step, navigateToNextStep } = useStepperNavigation({
     path: "/checkout",
   });
+  const { personalInfosControl, savePersonalInfos } =
+    useShoppingCartPersonalInfosForm({
+      navigateToNextStep,
+    });
+
+  const { shippingDetailsControl, saveShippingDetails } =
+    useShoppingCartShippingDetailsForm({
+      navigateToNextStep,
+    });
+
+  const { paymentDetailsControl, savePaymentDetails } =
+    useShoppingCartPaymentDetailsForm({
+      navigateToNextStep,
+    });
 
   return (
     <>
@@ -31,16 +42,18 @@ export const CheckoutPage = () => {
       </Stepper>
 
       {step === 1 && (
-        <form
-          onSubmit={(event) => {
-            event.preventDefault();
-
-            navigateToNextStep();
-          }}
-        >
+        <form onSubmit={savePersonalInfos}>
           <Stack spacing={2} sx={{ mt: 4, width: 300 }}>
-            <TextField label="First Name" name="firstName" />
-            <TextField label="Last Name" name="lastName" />
+            <ControlledTextField
+              control={personalInfosControl}
+              label="First Name"
+              name="firstName"
+            />
+            <ControlledTextField
+              control={personalInfosControl}
+              label="Last Name"
+              name="lastName"
+            />
             <Button type="submit" variant="contained">
               Next Step
             </Button>
@@ -49,16 +62,38 @@ export const CheckoutPage = () => {
       )}
 
       {step === 2 && (
-        <form
-          onSubmit={(event) => {
-            event.preventDefault();
-
-            navigateToNextStep();
-          }}
-        >
+        <form onSubmit={saveShippingDetails}>
           <Stack spacing={2} sx={{ mt: 4, width: 300 }}>
-            <TextField label="Address" name="address" />
-            <TextField label="Country" name="country" />
+            <ControlledTextField
+              control={shippingDetailsControl}
+              label="Address"
+              name="address"
+            />
+            <ControlledTextField
+              control={shippingDetailsControl}
+              label="Country"
+              name="country"
+            />
+            <Button type="submit" variant="contained">
+              Next Step
+            </Button>
+          </Stack>
+        </form>
+      )}
+
+      {step === 3 && (
+        <form onSubmit={savePaymentDetails}>
+          <Stack spacing={2} sx={{ mt: 4, width: 300 }}>
+            <ControlledTextField
+              control={paymentDetailsControl}
+              label="Credit Card Number"
+              name="creditCardNumber"
+            />
+            <ControlledTextField
+              control={paymentDetailsControl}
+              label="CCV"
+              name="ccv"
+            />
             <Button type="submit" variant="contained">
               Next Step
             </Button>
