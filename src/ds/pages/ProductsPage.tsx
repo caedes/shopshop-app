@@ -2,12 +2,21 @@ import { Link } from "react-router";
 import { ProductList } from "../../products/ProductList";
 import { Fab, Typography } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
+import { useProducts } from "../../products/useProducts";
+import { useShoppingCart } from "../../shopping-cart/useShoppingCart";
 
 export const ProductsPage = () => {
+  const { products, isLoading } = useProducts();
+  const addToCart = useShoppingCart((state) => state.addToCart);
+
   return (
     <>
       <Typography>Choose your product.</Typography>
-      <ProductList />
+      <ProductList
+        isLoading={isLoading}
+        products={products}
+        addToCart={addToCart}
+      />
       <Fab
         color="primary"
         aria-label="Create new product"

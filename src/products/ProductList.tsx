@@ -1,10 +1,10 @@
 import { Box, Typography } from "@mui/material";
 import { BasicCard } from "../ds/molecules/BasicCard";
-import { useProducts } from "./useProducts";
 import { BasicGrid } from "../ds/molecules/BasicGrid";
 import { Price } from "../ds/atoms/Price";
-import { useShoppingCart } from "../shopping-cart/useShoppingCart";
 import { createShoppingCartItem } from "./createShoppingCartItem";
+import type { Product } from "./types";
+import type { ShoppingCartItem } from "../shopping-cart/types";
 
 /**
  * A simple function to get a different image for each product.
@@ -17,10 +17,17 @@ const getImageId = (id: string) => {
   return Number(id) + 20;
 };
 
-export const ProductList = () => {
-  const { products, isLoading } = useProducts();
-  const addToCart = useShoppingCart((state) => state.addToCart);
+type ProductListProps = {
+  isLoading: boolean;
+  addToCart: (shoppingCartItem: ShoppingCartItem) => void;
+  products?: Product[];
+};
 
+export const ProductList = ({
+  isLoading,
+  products,
+  addToCart,
+}: ProductListProps) => {
   if (isLoading) return <p>Loading...</p>;
 
   if (!products || products.length === 0)
