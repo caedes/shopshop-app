@@ -5,17 +5,7 @@ import { Price } from "../ds/atoms/Price";
 import { createShoppingCartItem } from "./createShoppingCartItem";
 import type { Product } from "./types";
 import type { ShoppingCartItem } from "../shopping-cart/types";
-
-/**
- * A simple function to get a different image for each product.
- * Picsum has images with ids from 0 to 1084, so we add 20 to the product id
- * to avoid having the same image as the product id.
- *
- * It should be avoid in production code, but it's fine for this demo app.
- */
-const getImageId = (id: string) => {
-  return Number(id) + 20;
-};
+import { getImageId } from "./image";
 
 type ProductListProps = {
   isLoading: boolean;
