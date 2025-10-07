@@ -1,0 +1,1 @@
+export { defineNavigatorLanguage } from "./defineNavigatorLanguage";
