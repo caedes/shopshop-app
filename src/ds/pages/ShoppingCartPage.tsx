@@ -26,9 +26,9 @@ export const ShoppingCartPage = () => {
         />
       )}
 
-      <p>
+      <Typography>
         Total : <Price amount={total} />
-      </p>
+      </Typography>
 
       <Button variant="contained" onClick={handlePurchase}>
         Purchase
